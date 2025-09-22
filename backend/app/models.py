@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, Text
 from datetime import datetime
 from app.database import Base
 
@@ -12,4 +12,5 @@ class Email(Base):
     is_filtered = Column(Boolean, default=False)
     sentiment = Column(String, default="Neutral")
     priority = Column(String, default="Not Urgent")
+    category = Column(String, default="other")
     
