@@ -1,17 +1,13 @@
 from transformers import pipeline
 
+# Load once at startup
 sentiment_pipeline = pipeline("sentiment-analysis")
 
-def analyze_sentiment(text: str) -> str:
+def analyze_sentiment(text: str):
     if not text or text.strip() == "":
-        return "neutral"
-    
+        return None, None
+
     result = sentiment_pipeline(text[:512])[0]
     label = result["label"].lower()
-
-    if "pos" in label:
-        return "positive"
-    elif "neg" in label:
-        return "negative"
-    else:
-        return "neutral"
+    score = float(result["score"])
+    return label, score

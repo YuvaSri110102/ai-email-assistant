@@ -9,3 +9,4 @@ pyzmail36==1.0.5
 email-validator==2.0.0
 transformers==4.46.1
 torch>=2.0.0
+keybert

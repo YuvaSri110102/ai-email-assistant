@@ -34,4 +34,4 @@ for email in emails:
 
 db.commit()
 db.close()
-print("✅ Emails categorized and prioritized successfully!")
+print("Emails categorized and prioritized successfully!")
